@@ -11,7 +11,7 @@ import java.util.Random;
 public class CollectionTestSuite {
     @Before
     public void before() {
-        System.out.println("Testing: begine");
+        System.out.println("Testing: begin");
     }
 
     @After
