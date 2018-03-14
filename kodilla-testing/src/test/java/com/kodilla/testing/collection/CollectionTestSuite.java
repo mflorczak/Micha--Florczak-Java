@@ -43,7 +43,7 @@ public class CollectionTestSuite {
         System.out.println("Testing: normal...");
         ArrayList <Integer> evenList = oddNumbersExterminator.exterminate(randomNumber);
         //Then
-        Assert.assertEquals(evenList.size(),3);
+        Assert.assertEquals(3,evenList.size());
 
     }
 }
