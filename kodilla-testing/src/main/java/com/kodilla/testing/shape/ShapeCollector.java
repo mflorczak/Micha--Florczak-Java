@@ -26,8 +26,12 @@ public class ShapeCollector {
         return shape;
     }
 
-    public Shape showFigures() {
-        return null;
+    public String showFigures() {
+        String figureType = "";
+        for (Shape shape: shapes) {
+            figureType+= shape;
+        }
+        return figureType;
     }
 
     public int getFiguresQuantity() {

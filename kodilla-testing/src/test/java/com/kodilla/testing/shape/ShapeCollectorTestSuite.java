@@ -46,4 +46,18 @@ public class ShapeCollectorTestSuite {
         //Then
         Assert.assertEquals(circle,shape);
     }
+
+    @Test
+    public void testShowFigures() {
+        //Given
+        ShapeCollector shapeCollector = new ShapeCollector();
+        Circle circle = new Circle();
+        shapeCollector.addFigure(circle);
+        //When
+        String name = circle.getShapeName();
+
+
+        //Then
+        Assert.assertEquals("Circle",name);
+    }
 }
