@@ -27,7 +27,7 @@ public class ForumStatisticsTestSuite {
     }
 
     @Test
-    public void testPostsNumberTausen() {
+    public void testPostsNumberThousand() {
         //Given
         Statistics statistics = mock(Statistics.class);
         ForumStatistics forumStatistics = new ForumStatistics();
