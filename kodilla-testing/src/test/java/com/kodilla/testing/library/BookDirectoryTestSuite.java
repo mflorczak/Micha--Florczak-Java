@@ -94,7 +94,7 @@ public class BookDirectoryTestSuite {
         when(libraryDatabaseMock.listBooksInHandsOf(libraryUser)).thenReturn(theListOfBooks0);
 
         //When
-        theListOfBooks0 = bookLibrary.listBooksInHandsOf(libraryUser);
+        List<Book> theListBooks = bookLibrary.listBooksInHandsOf(libraryUser);
 
         //Then
         Assert.assertEquals(0, theListOfBooks0.size());
