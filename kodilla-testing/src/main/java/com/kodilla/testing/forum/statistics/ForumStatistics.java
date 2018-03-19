@@ -60,27 +60,27 @@ public class ForumStatistics {
         return averageCommentsForPost;
     }
 
-    public void setUsersNumber(int usersNumber) {
+    private void setUsersNumber(int usersNumber) {
         this.usersNumber = usersNumber;
     }
 
-    public void setPostsNumber(int postsNumber) {
+    private void setPostsNumber(int postsNumber) {
         this.postsNumber = postsNumber;
     }
 
-    public void setCommentsNumber(int commentsNumber) {
+    private void setCommentsNumber(int commentsNumber) {
         this.commentsNumber = commentsNumber;
     }
 
-    public void setAveragePostsNumber(double averagePostsNumber) {
+    private void setAveragePostsNumber(double averagePostsNumber) {
         this.averagePostsNumber = averagePostsNumber;
     }
 
-    public void setAverageCommentsUserNumber(double averageCommentsUserNumber) {
+    private void setAverageCommentsUserNumber(double averageCommentsUserNumber) {
         this.averageCommentsUserNumber = averageCommentsUserNumber;
     }
 
-    public void setAverageCommentsForPost(double averageCommentsForPost) {
+    private void setAverageCommentsForPost(double averageCommentsForPost) {
         this.averageCommentsForPost = averageCommentsForPost;
     }
 }
