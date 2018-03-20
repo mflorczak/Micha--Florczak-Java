@@ -12,8 +12,9 @@ public class StreamMain {
         expressionExecutor.executeExpression(33,11, (a, b) -> a / b);
 
         PoemBeautifier poemBeautifier = new PoemBeautifier();
-        poemBeautifier.beautify("text",(text) -> "AAA");
-        poemBeautifier.beautify("text",(text) -> "*****");
+        poemBeautifier.beautify("text",(text) -> "AAA" + text + "AAA");
+        poemBeautifier.beautify("text",(text) -> "*****" + text + "*****");
         poemBeautifier.beautify("text", (text) -> text.toUpperCase());
+        poemBeautifier.beautify("text",(text) -> "./" + text + "\\.");
     }
 }
