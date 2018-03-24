@@ -14,12 +14,12 @@ public class WorldTestSuite {
         Continent africa = new Continent("Africa");
         Continent asia = new Continent("Asia");
         Country poland = new Country("Poland",new BigDecimal("333"));
-        Country irland = new Country("Irland", new BigDecimal("1000"));
+        Country ireland = new Country("Ireland", new BigDecimal("1000"));
         Country slovakia = new Country("Slovakia", new BigDecimal("2000"));
         Country china = new Country("China", new BigDecimal("3000"));
         Country egypt = new Country("Egypt", new BigDecimal("2500"));
         europe.addCountry(poland);
-        europe.addCountry(irland);
+        europe.addCountry(ireland);
         europe.addCountry(slovakia);
         africa.addCountry(egypt);
         asia.addCountry(china);

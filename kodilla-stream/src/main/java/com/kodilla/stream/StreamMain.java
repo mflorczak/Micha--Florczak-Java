@@ -6,6 +6,8 @@ import com.kodilla.stream.forumuser.ForumUser;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import static com.kodilla.stream.array.ArrayOperations.getAverage;
+
 public class StreamMain {
     public static void main(String[] args) {
         Forum forum = new Forum();
@@ -18,6 +20,5 @@ public class StreamMain {
         forumUserMap.entrySet().stream()
                 .map(forumUser -> forumUser.getKey() +":"+ forumUser.getValue())
                 .forEach(System.out::println);
-
     }
 }
