@@ -7,7 +7,8 @@ public interface ArrayOperations {
         double result;
         IntStream.range(0, numbers.length)
                 .forEach(System.out::println);
-        result =IntStream.range(0, numbers.length)
+        result = IntStream.range(0, numbers.length)
+                .map(iterator -> numbers[iterator++])
                 .average()
                 .getAsDouble();
         return result;

@@ -1,4 +1,38 @@
 package com.kodilla.stream.portfolio;
 
-public class TaskList {
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
+public final class TaskList {
+    private final List<Task> tasks = new ArrayList<>();
+    private final String name;
+
+    public TaskList(final String name) {
+        this.name = name;
+    }
+
+    public void addTask(Task task) {
+        tasks.add(task);
+    }
+
+    public boolean removeTask(Task task) {
+        return tasks.remove(task);
+    }
+
+    public List<Task> getTasks() {
+        return new ArrayList<>(tasks);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof TaskList)) return false;
+        TaskList taskList = (TaskList) o;
+        return Objects.equals(name, taskList.name);
+    }
 }
