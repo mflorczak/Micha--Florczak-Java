@@ -22,5 +22,7 @@ public class ArrayOperationsTestSuite {
 
         //Then
         Assert.assertEquals(average,result,0);
+
+
     }
 }
