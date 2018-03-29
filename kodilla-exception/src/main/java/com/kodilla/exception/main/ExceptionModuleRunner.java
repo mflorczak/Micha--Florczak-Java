@@ -12,5 +12,12 @@ public class ExceptionModuleRunner {
         ExceptionHandling exceptionHandling = new ExceptionHandling();
         String result = exceptionHandling.exceptionHandling(1,2);
         System.out.println(result);
+
+        try {
+            FirstChallenge firstChallenge = new FirstChallenge();
+            firstChallenge.divide(3,0);
+        } catch(ArithmeticException e) {
+            System.out.println("division by zero");
+        }
     }
 }
