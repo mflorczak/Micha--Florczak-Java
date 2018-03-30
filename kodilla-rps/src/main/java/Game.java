@@ -33,7 +33,7 @@ public class Game  {
         SCISSORS;
     }
 
-    public String selectWiner(GameMove gameMove) {
+    public String selectWinner(GameMove gameMove) {
         String winner = GameSolutions.winners.entrySet().stream()
                 .filter(e -> e.getKey().getUserMove().equals(gameMove.getUserMove()))
                 .filter(e -> e.getKey().getComputerMove().equals(gameMove.getComputerMove()))
