@@ -1,34 +1,45 @@
 import java.util.Scanner;
 
 public class UserDialogs {
-    public static String getUserName() {
+    private static String name;
+    private static int quantity;
+
+    public UserDialogs() {
+        this.name = getUserName();
+        this.quantity = getBestOfQuantity();
+    }
+
+    private static String getUserName() {
         String name;
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
             System.out.println("Entry your name: ");
             name = scanner.nextLine();
-            if(name.length() == 0) {
+            if(name.length() < 3) {
                 System.out.println("To short name!");
             } else if(!validName(name)){
-                System.out.println("Invalid characters, please use only letters");
+                System.out.println("Invalid characters, please use only letters!");
             } else {
                 return name;
             }
         }
     }
 
-    public static int getBestOfQuantity() {
-        int quantity;
+    private static int getBestOfQuantity() {
+        String quantity;
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
             System.out.println("Entry best of: ");
-            quantity = scanner.nextInt();
-            if(quantity == 0) {
+            quantity = scanner.nextLine();
+            if(quantity.length() == 0) {
                 System.out.println("To not enough rounds");
+            } else if (!(validQuantity(quantity))){
+                System.out.println("Invalid characters, please use only numbers!");
             } else {
-                return quantity;
+                int result = Integer.parseInt(quantity);
+                return result;
             }
         }
     }
@@ -43,4 +54,21 @@ public class UserDialogs {
         return valid;
     }
 
+    private static boolean validQuantity(String quantity) {
+        boolean valid = true;
+        for(int i=0; i<quantity.length(); i++) {
+            if(!(quantity.charAt(i) >= 48 && quantity.charAt(i) <= 57)){
+                valid = false;
+            }
+        }
+        return valid;
+    }
+
+    public static String getName() {
+        return name;
+    }
+
+    public static int getQuantity() {
+        return quantity;
+    }
 }
