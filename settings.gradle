@@ -1,2 +1,6 @@
 include 'kodilla-testing'
+include 'kodilla-stream'
+include 'kodilla-exceptrion'
+include 'kodilla-rps'
+include 'kodilla-good-patterns'
 

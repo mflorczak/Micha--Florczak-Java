@@ -1,6 +1,8 @@
 package com.kodilla.testing.shape;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.stream.Collectors;
 
 public class ShapeCollector {
     private ArrayList<Shape> shapes = new ArrayList<>();
@@ -27,10 +29,9 @@ public class ShapeCollector {
     }
 
     public String showFigures() {
-        String figureType = "";
-        for (Shape shape: shapes) {
-            figureType+= shape;
-        }
+        String figureType = shapes.stream()
+                .map(Shape::getShapeName)
+                .collect(Collectors.joining());
         return figureType;
     }
 
