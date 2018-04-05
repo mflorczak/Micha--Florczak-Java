@@ -64,4 +64,12 @@ public class Menu {
         System.out.println();
     }
 
+    public static void validator(GameMove gameMove) {
+        if(Game.selectWinner(gameMove).equals(GameSolutions.DRAW)) {
+            System.out.println(GameSolutions.DRAW);
+        } else {
+            System.out.println("Won: " + Game.selectWinner(gameMove));
+        }
+    }
+
 }
