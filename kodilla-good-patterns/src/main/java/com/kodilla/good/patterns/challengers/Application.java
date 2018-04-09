@@ -7,6 +7,6 @@ public class Application {
         SellRequestRetriever sellRequestRetriever = new SellRequestRetriever();
         SellRequest sellRequest = sellRequestRetriever.sellRequest();
         ProductOrderService productOrderService = new ProductOrderService(sellRequest.getItem());
-        productOrderService.process(sellRequest);
+        ValidatorOrder.isSend("John", "Smith", productOrderService.process(sellRequest));
     }
 }
