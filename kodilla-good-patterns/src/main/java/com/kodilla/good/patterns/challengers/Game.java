@@ -7,10 +7,6 @@ public class Game implements Item {
         this.gameName = gameName;
     }
 
-    public String getGameName() {
-        return gameName;
-    }
-
     @Override
     public String getNameItem() {
         return gameName;

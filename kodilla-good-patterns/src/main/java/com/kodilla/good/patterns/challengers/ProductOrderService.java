@@ -1,11 +1,9 @@
 package com.kodilla.good.patterns.challengers;
 
-import java.time.LocalDate;
-
 public class ProductOrderService {
     private Item item;
 
-    public ProductOrderService( Item item) {
+    public ProductOrderService(Item item) {
         this.item = item;
     }
 

@@ -1,7 +1,6 @@
 package com.kodilla.good.patterns.challengers;
 
 public class ValidatorOrder {
-    private  Item items;
     public static boolean validatorOrder(final SellDto sellDto, final String name, final String lastName) {
         if(sellDto.isSold() && name.equals(User.getName()) && lastName.equals(User.getLastName())) {
             return true;
