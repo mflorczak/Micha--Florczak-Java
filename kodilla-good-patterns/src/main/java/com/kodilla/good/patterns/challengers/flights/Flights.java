@@ -13,8 +13,9 @@ public class Flights {
     static {
         flight.add(new FlightDatabase(new FlightFrom(KRAKOW), new FlightTo(WARSZAWA)));
         flight.add(new FlightDatabase(new FlightFrom(WARSZAWA), new FlightTo(KRAKOW)));
-        flight.add(new FlightDatabase(new FlightFrom(KRAKOW), new FlightTo(WARSZAWA)));
-        flight.add(new FlightDatabase(new FlightFrom(KRAKOW), new FlightTo(WARSZAWA)));
-        flight.add(new FlightDatabase(new FlightFrom(KRAKOW), new FlightTo(WARSZAWA)));
+        flight.add(new FlightDatabase(new FlightFrom(KATOWICE), new FlightTo(BIALYSTOK)));
+        flight.add(new FlightDatabase(new FlightFrom(BIALYSTOK), new FlightTo(KATOWICE)));
+        flight.add(new FlightDatabase(new FlightFrom(KATOWICE), new FlightTo(WARSZAWA)));
+        flight.add(new FlightDatabase(new FlightFrom(WARSZAWA), new FlightTo(KATOWICE)));
     }
 }

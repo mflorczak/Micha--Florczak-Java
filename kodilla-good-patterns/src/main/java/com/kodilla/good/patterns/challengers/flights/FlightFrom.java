@@ -12,4 +12,17 @@ public class FlightFrom {
     public String getFlightFrom() {
         return flightFrom;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof FlightFrom)) return false;
+        FlightFrom that = (FlightFrom) o;
+        return Objects.equals(flightFrom, that.flightFrom);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(flightFrom);
+    }
 }

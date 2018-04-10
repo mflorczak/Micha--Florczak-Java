@@ -1,42 +1,25 @@
 package com.kodilla.good.patterns.challengers.flights;
 
-import java.util.Objects;
-
 public class FlightDatabase {
-    private FlightFrom flightFrom;
-    private FlightTo flightTo;
+    private FlightFrom flightFromAirport;
+    private FlightTo flightToAirport;
 
-    public FlightDatabase(final FlightFrom flightFrom, final FlightTo flightTo) {
-        this.flightFrom = flightFrom;
-        this.flightTo = flightTo;
+    public FlightDatabase(final FlightFrom flightFromAirport, final FlightTo flightToAirport) {
+        this.flightFromAirport = flightFromAirport;
+        this.flightToAirport = flightToAirport;
     }
 
-    public FlightFrom getFlightFrom() {
-        return flightFrom;
+    public FlightFrom getFlightFromAirport() {
+        return flightFromAirport;
     }
 
-    public FlightTo getFlightTo() {
-        return flightTo;
+    public FlightTo getFlightToAirport() {
+        return flightToAirport;
     }
 
     @Override
     public String toString() {
-        return "flightFrom = " + flightFrom.getFlightFrom() +
-                ", flightTo = " + flightTo.getFlightTo();
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof FlightDatabase)) return false;
-        FlightDatabase that = (FlightDatabase) o;
-        return Objects.equals(flightFrom, that.flightFrom) &&
-                Objects.equals(flightTo, that.flightTo);
-    }
-
-    @Override
-    public int hashCode() {
-
-        return Objects.hash(flightFrom, flightTo);
+        return "flightFromAirport = " + flightFromAirport.getFlightFrom() +
+                ", flightToAirport = " + flightToAirport.getFlightTo();
     }
 }
