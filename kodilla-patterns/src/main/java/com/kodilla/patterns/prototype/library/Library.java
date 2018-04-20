@@ -40,7 +40,7 @@ public final class Library extends Prototype {
         Library copyLibrary = (Library)super.clone();
         copyLibrary.books = new HashSet<>();
         for(Book book: books) {
-            copyLibrary.books.add(book);
+            copyLibrary.books.add(new Book(book));
         }
         return copyLibrary;
     }
