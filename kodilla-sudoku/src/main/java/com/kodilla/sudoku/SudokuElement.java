@@ -10,6 +10,7 @@ public class SudokuElement {
 
     public SudokuElement(final int value) {
         this.value = value;
+
     }
 
     public int getValue() {

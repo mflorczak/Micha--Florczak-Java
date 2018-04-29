@@ -15,9 +15,9 @@ public class SudokuTestSuite {
     public void testShowBoard() {
         //Given
         SudokuBoard board = new SudokuBoard();
-        SudokuColumn column = new SudokuColumn();
+        board.getColumn().setElement(0,0,9);
         //When & Then
-        column.setElement(0,0, 9);
+        //column.setElement(0,0, 9);
 
         board.showBoard();
     }

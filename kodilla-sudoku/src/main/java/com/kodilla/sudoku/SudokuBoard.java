@@ -1,8 +1,12 @@
 package com.kodilla.sudoku;
 
 public class SudokuBoard {
+    private SudokuColumn column = new SudokuColumn();
     public void showBoard() {
-        SudokuColumn column = new SudokuColumn();
         System.out.println(column);
+    }
+
+    public SudokuColumn getColumn() {
+        return column;
     }
 }

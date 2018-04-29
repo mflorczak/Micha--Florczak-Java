@@ -23,17 +23,17 @@ public class SudokuRow {
         String s = "";
         int counter = 0;
         for(Integer row: rows) {
-            if(row.intValue() == -1 ) {
-                if(counter % 3 == 0) {
-                    s += " |__|";
-                } else {
-                    s += "|__|";
+            String v = row.intValue() == -1 ? "__" : " " + row.intValue();
+            if(counter % 3 == 0) {
+                if(counter > 0) {
+                    s += "|";
                 }
-                counter++;
+                s += " |" + v;
             } else {
-                s += "|" + " " + row.intValue() + "|";
+                s += "|" + v;
             }
+            counter++;
         }
-        return s + "\n";
+        return s + "|\n";
     }
 }
