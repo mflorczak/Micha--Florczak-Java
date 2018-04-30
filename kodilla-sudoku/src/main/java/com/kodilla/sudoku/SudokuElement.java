@@ -10,7 +10,9 @@ public class SudokuElement {
 
     public SudokuElement(final int value) {
         this.value = value;
-
+        for(int i = 1; i < 10; i++) {
+            possibleValues.add(i);
+        }
     }
 
     public int getValue() {

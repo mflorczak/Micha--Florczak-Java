@@ -6,12 +6,16 @@ import java.util.stream.IntStream;
 
 public class SudokuRow {
     private List<Integer> rows = new ArrayList<>();
+    private SudokuElement element = new SudokuElement(SudokuElement.EMPTY);
 
     public SudokuRow() {
-        SudokuElement element = new SudokuElement(SudokuElement.EMPTY);
         IntStream.iterate(1, n -> n + 1)
                 .limit(9)
-                .forEach(n -> rows.add(element.getValue()));
+                .forEach(n -> rows.add(getElement().getValue()));
+    }
+
+    public SudokuElement getElement() {
+        return element;
     }
 
     public List<Integer> getRows() {
