@@ -13,12 +13,12 @@ public class ArrayOperationsTestSuite {
         double average = 0;
         for(int i=0; i<20; i++){
             numbers[i] = 5;
-            average+= numbers[i];
+            average += numbers[i];
         }
 
         //When
         double result = getAverage(numbers);
-        average = average/20;
+        average = average / 20;
 
         //Then
         Assert.assertEquals(average,result,0);
