@@ -31,7 +31,10 @@ public class Item {
         return id;
     }
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToOne(
+            targetEntity = Product.class,
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY)
     @JoinColumn(name = "PRODUCT_ID")
     public Product getProduct() {
         return product;

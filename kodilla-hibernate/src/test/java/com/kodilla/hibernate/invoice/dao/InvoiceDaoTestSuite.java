@@ -6,7 +6,6 @@ import com.kodilla.hibernate.invoice.Product;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.junit.runner.Runner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -18,6 +17,7 @@ import java.math.BigDecimal;
 public class InvoiceDaoTestSuite {
     @Autowired
     private InvoiceDao invoiceDao;
+
     @Test
     public void testInvoiceDaoSave() {
         //Given
@@ -30,6 +30,8 @@ public class InvoiceDaoTestSuite {
         Invoice invoice = new Invoice("02.05.2018/0001");
         invoice.getItems().add(item1);
         invoice.getItems().add(item2);
+        item1.setInvoice(invoice);
+        item2.setInvoice(invoice);
 
         //When
         invoiceDao.save(invoice);
@@ -39,10 +41,10 @@ public class InvoiceDaoTestSuite {
         Assert.assertNotEquals(0,id);
 
         //CleanUp
-//        try {
-//            invoiceDao.delete(id);
-//        } catch (Exception e) {
-//        }
+        try {
+            invoiceDao.delete(id);
+        } catch (Exception e) {
+        }
 
 
     }
