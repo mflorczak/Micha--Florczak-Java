@@ -8,11 +8,14 @@ public class SudokuElement {
     public static int EMPTY = -1;
     private List<Integer> possibleValues = new ArrayList<>();
 
-    public SudokuElement(final int value) {
-        this.value = value;
+    public SudokuElement() {
         for(int i = 1; i < 10; i++) {
             possibleValues.add(i);
         }
+    }
+
+    public void setValue(int value) {
+        this.value = value;
     }
 
     public int getValue() {

@@ -6,24 +6,19 @@ import java.util.stream.IntStream;
 
 public class SudokuColumn {
     private List<SudokuRow> cols = new ArrayList<>();
-    private SudokuRow row;
 
     public SudokuColumn() {
         IntStream.iterate(1, n -> n + 1)
                 .limit(9)
-                .forEach(n -> cols.add(row = new SudokuRow()));
-    }
-
-    public SudokuRow getRow() {
-        return row;
+                .forEach(n -> cols.add(new SudokuRow()));
     }
 
     public List<SudokuRow> getCols() {
         return cols;
     }
 
-    public void setElement(int x, int y, int element) {
-        cols.get(y).getRows().set(x,element);
+    public void setElement(int x, int y, int value) {
+        cols.get(y).getRows().get(x).setValue(value);
     }
 
     @Override

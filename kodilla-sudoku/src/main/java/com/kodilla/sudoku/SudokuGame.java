@@ -11,18 +11,23 @@ public class SudokuGame {
         return board;
     }
 
-    public void validatorSudoku() {
+    public void removePossibles(int x, int y) {
+        SudokuElement el = getBoard().getColumn().getCols().get(y).getRows().get(x);
         for(int i = 0; i < 9; i++) {
-            for(int j = 0; j < 9; j++ ) {
-                if (board.getColumn().getCols().get(i).getRows().get(j)
-                        == board.getColumn().getRow().getElement().getValue()) {
-                    board.getColumn().getRow().getElement().getPossibleValues()
-                            .remove(board.getColumn().getRow().getElement());
-              } else if(board.getColumn().getCols().get(i).getRows().get(j) == -1
-                        && board.getColumn().getRow().getElement().getPossibleValues().size() == 1) {
-                    board.getColumn().setElement(i,j,board.getColumn().getRow().getElement().getPossibleValues().get(0));
-                }
+            if(el.getPossibleValues().contains(getBoard().getColumn().getCols().get(y).getRows().get(i).getValue())) {
+                el.getPossibleValues().remove(getBoard().getColumn().getCols().get(y).getRows().get(i).getValue() -1);
             }
+        }
+        for(int i = 0; i < el.getPossibleValues().size(); i++) {
+            System.out.print(" Możliwa wartość: " + el.getPossibleValues().get(i));
+        }
+        System.out.println();
+    }
+
+    public void setLastPossibles(int x, int y) {
+        SudokuElement el = board.getColumn().getCols().get(y).getRows().get(x);
+        if(el.getPossibleValues().size() == 1 && el.getValue() == -1) {
+            getBoard().getColumn().getCols().get(y).getRows().get(x).setValue(el.getPossibleValues().get(0));
         }
     }
 }
