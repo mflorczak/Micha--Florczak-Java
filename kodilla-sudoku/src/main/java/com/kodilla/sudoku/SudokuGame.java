@@ -25,9 +25,9 @@ public class SudokuGame {
     }
 
     public void setLastPossibles(int x, int y) {
-        SudokuElement el = board.getColumn().getCols().get(y).getRows().get(x);
+        SudokuElement el = getBoard().getColumn().getCols().get(y).getRows().get(x);
         if(el.getPossibleValues().size() == 1 && el.getValue() == -1) {
-            getBoard().getColumn().getCols().get(y).getRows().get(x).setValue(el.getPossibleValues().get(0));
+            el.setValue(el.getPossibleValues().get(0));
         }
     }
 }
