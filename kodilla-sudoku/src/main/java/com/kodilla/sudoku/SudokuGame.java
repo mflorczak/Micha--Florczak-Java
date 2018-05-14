@@ -14,14 +14,17 @@ public class SudokuGame {
     public void removePossibles(int x, int y) {
         SudokuElement el = getBoard().getColumn().getCols().get(y).getRows().get(x);
         for(int i = 0; i < 9; i++) {
+            //Row
             if(el.getPossibleValues().contains(getBoard().getColumn().getCols().get(y).getRows().get(i).getValue())) {
-                el.getPossibleValues().remove(getBoard().getColumn().getCols().get(y).getRows().get(i).getValue() -1);
+                Integer integer = getBoard().getColumn().getCols().get(y).getRows().get(i).getValue();
+                el.getPossibleValues().remove(integer);
+            }
+            //Column
+            if(el.getPossibleValues().contains(getBoard().getColumn().getCols().get(i).getRows().get(x).getValue())) {
+                Integer integer = getBoard().getColumn().getCols().get(i).getRows().get(x).getValue();
+                el.getPossibleValues().remove(integer);
             }
         }
-        for(int i = 0; i < el.getPossibleValues().size(); i++) {
-            System.out.print(" Możliwa wartość: " + el.getPossibleValues().get(i));
-        }
-        System.out.println();
     }
 
     public void setLastPossibles(int x, int y) {

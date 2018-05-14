@@ -27,6 +27,15 @@ public class SudokuTestSuite {
         game.getBoard().getColumn().setElement(6,0,3);
         game.getBoard().getColumn().setElement(7,0,9);
 
+
+        game.getBoard().getColumn().setElement(0,2,2);
+        game.getBoard().getColumn().setElement(0,3,7);
+        game.getBoard().getColumn().setElement(0,4,6);
+        game.getBoard().getColumn().setElement(0,5,5);
+        game.getBoard().getColumn().setElement(0,6,4);
+        game.getBoard().getColumn().setElement(0,7,3);
+        game.getBoard().getColumn().setElement(0,8,9);
+
         for(int i = 0; i < 9; i++) {
             for(int j = 0; j < 9; j++) {
                 game.removePossibles(j, i);
