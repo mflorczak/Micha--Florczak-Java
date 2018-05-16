@@ -18,8 +18,6 @@ public class Menu {
         String choose;
         Scanner scanner = new Scanner(System.in);
         choose = scanner.nextLine().toLowerCase();
-
-
         switch (choose) {
             case "x":
                 System.exit(0);

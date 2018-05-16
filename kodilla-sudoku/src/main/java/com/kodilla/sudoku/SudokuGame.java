@@ -2,8 +2,35 @@ package com.kodilla.sudoku;
 
 public class SudokuGame {
     private SudokuBoard board = new SudokuBoard();
+    private boolean resultSudoku = false;
+
+    public boolean isResultSudoku() {
+        return resultSudoku;
+    }
+
+    public void setResultSudoku(boolean resultSudoku) {
+        this.resultSudoku = resultSudoku;
+    }
 
     public boolean resolveSudoku() {
+        boolean resolve = false;
+        int emptyPlace;
+        while(!resolve) {
+            emptyPlace = 0;
+            for (int i = 0; i < 9; i++) {
+                for (int j = 0; j < 9; j++) {
+                    removePossibles(j, i);
+                    setLastPossibles(j, i);
+                    if(getBoard().getColumn().getCols().get(i).getRows().get(j).getValue() == -1) {
+                        ++emptyPlace;
+                    }
+                    if(emptyPlace == 0) {
+                        resolve = true;
+                    }
+                }
+            }
+
+        }
         return true;
     }
 

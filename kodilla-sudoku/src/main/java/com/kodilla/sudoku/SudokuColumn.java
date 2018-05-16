@@ -25,12 +25,13 @@ public class SudokuColumn {
     public String toString() {
         String s = "";
         int counter = 0;
+        System.out.print("y\\x 0  1  2    3  4  5    6  7  8");
         for(SudokuRow col: cols) {
             if(counter % 3 == 0) {
                 s += "\n";
             }
             counter++;
-            s += col.toString();
+            s += counter -1 + col.toString();
         }
         return s;
     }

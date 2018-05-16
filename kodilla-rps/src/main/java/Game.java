@@ -71,12 +71,12 @@ public class Game  {
             System.out.println(question);
             String choose;
             choose = in.nextLine();
-            if (choose.equals("T") || choose.equals("t")) {
+            if (choose.equals("Y") || choose.equals("y")) {
                 System.exit(0);
             } else if (choose.equals("N") || choose.equals("n")) {
                 endGame = false;
             } else {
-                System.out.println("Invalid characters, please use only T or N!");
+                System.out.println("Invalid characters, please use only Y or N!");
             }
         }
     }
@@ -88,13 +88,13 @@ public class Game  {
             System.out.println(question);
             String choose;
             choose = in.nextLine();
-            if (choose.equals("T") || choose.equals("t")) {
+            if (choose.equals("Y") || choose.equals("y")) {
                 zeroCount();
                 PlayGame.playGame();
             } else if (choose.equals("N") || choose.equals("n")) {
                 endGame = false;
             } else {
-                System.out.println("Invalid characters, please use only T or N!");
+                System.out.println("Invalid characters, please use only Y or N!");
             }
         }
     }

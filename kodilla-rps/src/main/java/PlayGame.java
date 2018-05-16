@@ -29,10 +29,10 @@ public class PlayGame {
                     Menu.validator(gameMove);
                     break;
                 case "x":
-                   Game.endGame("Close game?(T/N)");
+                   Game.endGame("Close game?(Y/N)");
                     break;
                 case "n":
-                    Game.newGame("New game?(T/N)");
+                    Game.newGame("New game?(Y/N)");
                     break;
                 default:
                     System.out.println("Wrong move!");
