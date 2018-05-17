@@ -15,6 +15,7 @@ public class SudokuGame {
     public boolean resolveSudoku() {
         boolean resolve = false;
         int emptyPlace;
+        int counter = 0;
         while(!resolve) {
             emptyPlace = 0;
             for (int i = 0; i < 9; i++) {
@@ -29,7 +30,11 @@ public class SudokuGame {
                     }
                 }
             }
-
+            counter++;
+            if(counter > 100) {
+                System.out.println("Failure resolve!");
+                return true;
+            }
         }
         return true;
     }
