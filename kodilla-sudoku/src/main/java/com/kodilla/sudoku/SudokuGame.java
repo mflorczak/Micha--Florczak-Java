@@ -13,30 +13,28 @@ public class SudokuGame {
     }
 
     public boolean resolveSudoku() {
-        boolean resolve = false;
         int emptyPlace;
-        int counter = 0;
-        while(!resolve) {
+
+        while(true) {
+            boolean changed = false;
             emptyPlace = 0;
             for (int i = 0; i < 9; i++) {
                 for (int j = 0; j < 9; j++) {
                     removePossibles(j, i);
-                    setLastPossibles(j, i);
+                    changed = changed || setLastPossibles(j, i);
                     if(getBoard().getColumn().getCols().get(i).getRows().get(j).getValue() == -1) {
                         ++emptyPlace;
                     }
-                    if(emptyPlace == 0) {
-                        resolve = true;
-                    }
                 }
             }
-            counter++;
-            if(counter > 100) {
-                System.out.println("Failure resolve!");
+            if(emptyPlace == 0) {
                 return true;
             }
+            if(!changed) {
+                System.out.println("Failure resolve!");
+                return false;
+            }
         }
-        return true;
     }
 
     public SudokuBoard getBoard() {
@@ -71,10 +69,13 @@ public class SudokuGame {
         }
     }
 
-    public void setLastPossibles(int x, int y) {
+    public boolean setLastPossibles(int x, int y) {
+        boolean result = false;
         SudokuElement el = getBoard().getColumn().getCols().get(y).getRows().get(x);
         if(el.getPossibleValues().size() == 1 && el.getValue() == -1) {
+            result = true;
             el.setValue(el.getPossibleValues().get(0));
         }
+        return result;
     }
 }
