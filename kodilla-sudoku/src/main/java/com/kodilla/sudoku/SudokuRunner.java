@@ -6,7 +6,7 @@ public class SudokuRunner {
         while (!gameFinished) {
             SudokuMenu.showOptions();
             SudokuMenu.chooseOption();
-           // gameFinished = SudokuMenu.getGame().isResultSudoku();
+            gameFinished = SudokuMenu.getGame().isResultSudoku();
         }
 
     }

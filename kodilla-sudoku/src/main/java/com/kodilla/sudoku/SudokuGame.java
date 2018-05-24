@@ -14,7 +14,6 @@ public class SudokuGame {
 
     public boolean resolveSudoku() {
         int emptyPlace;
-
         while(true) {
             boolean changed = false;
             emptyPlace = 0;
