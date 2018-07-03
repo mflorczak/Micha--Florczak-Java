@@ -23,7 +23,6 @@ public class TaskList {
         this.listName = listName;
     }
 
-
     @Id
     @GeneratedValue
     @NotNull

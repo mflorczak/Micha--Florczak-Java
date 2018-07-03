@@ -13,7 +13,7 @@ public class WorldTestSuite {
         Continent europe = new Continent("Europe");
         Continent africa = new Continent("Africa");
         Continent asia = new Continent("Asia");
-        Country poland = new Country("Poland",new BigDecimal("333"));
+        Country poland = new Country("Poland",new BigDecimal("333.33333333333333333333333333"));
         Country ireland = new Country("Ireland", new BigDecimal("1000"));
         Country slovakia = new Country("Slovakia", new BigDecimal("2000"));
         Country china = new Country("China", new BigDecimal("3000"));
@@ -31,7 +31,7 @@ public class WorldTestSuite {
         BigDecimal actual = world.getPeopleQuantity();
 
         //
-        BigDecimal expected = new BigDecimal("8833");
+        BigDecimal expected = new BigDecimal("8833.33333333333333333333333333");
         Assert.assertEquals(expected,actual);
     }
 }
