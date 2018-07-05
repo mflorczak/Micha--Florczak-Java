@@ -2,21 +2,22 @@ package com.kodilla.hibernate.manytomany.dao;
 
 import com.kodilla.hibernate.manytomany.Company;
 import com.kodilla.hibernate.manytomany.Employee;
+import com.kodilla.hibernate.manytomany.facade.SearchFacade;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import javax.transaction.Transactional;
 import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class CompanyDaoTestSuite {
+
     @Autowired
     private CompanyDao companyDao;
+
     @Autowired
     private EmployeeDao employeeDao;
 
@@ -112,8 +113,5 @@ public class CompanyDaoTestSuite {
         } catch (Exception e) {
             //do nothing
         }
-
-
-
     }
 }

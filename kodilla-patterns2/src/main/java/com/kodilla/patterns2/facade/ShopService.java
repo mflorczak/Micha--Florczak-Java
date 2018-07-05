@@ -37,14 +37,14 @@ public class ShopService {
                 .forEach(o -> o.getItems().add(new Item(productId,qty)));
     }
 
-    public boolean removeItem(Long productId, Long orderId) {
+    public boolean removeItem(Long orderId, Long productId) {
         Iterator<Order> orderIterator = orders.stream()
                 .filter(o -> o.getOrderId().equals(orderId))
                 .iterator();
         while(orderIterator.hasNext()) {
             Order theOrder = orderIterator.next();
             int orderSize = theOrder.getItems().size();
-            for(int i = 0; i < orderSize; i++) {
+            for(int i = 0; i < theOrder.getItems().size(); i++) {
                 if(theOrder.getItems().get(i).getProductId().equals(productId)) {
                     theOrder.getItems().remove(i);
                     return true;

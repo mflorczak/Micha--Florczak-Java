@@ -5,10 +5,16 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-@NamedQuery(
-        name = "Company.findByThreeFirstLetter",
-        query = "FROM Company WHERE SUBSTRING(name, 1,3) LIKE :NAME"
-)
+@NamedQueries({
+        @NamedQuery(
+                name = "Company.findByThreeFirstLetter",
+                query = "FROM Company WHERE SUBSTRING(name, 1,3) LIKE :NAME"
+        ),
+        @NamedQuery(
+                name = "Company.findByOptionalWord",
+                query = "FROM Company WHERE name LIKE CONCAT('%',CONCAT(:NAME,'%'))"
+        )
+})
 @Entity
 @Table(name = "COMPANIES")
 public class Company {

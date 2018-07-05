@@ -1,5 +1,9 @@
 package com.kodilla.patterns2.facade;
 
+import com.kodilla.patterns2.facade.api.ItemDto;
+import com.kodilla.patterns2.facade.api.OrderDto;
+import com.kodilla.patterns2.facade.api.OrderFacade;
+import com.kodilla.patterns2.facade.api.OrderProcessingException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +17,12 @@ import static org.junit.Assert.*;
 @RunWith(SpringRunner.class)
 @SpringBootApplication
 public class ShopServiceSuiteTest {
+
     @Autowired
     private ShopService shopService;
+
+    @Autowired
+    private OrderFacade orderFacade;
 
     @Test
     public void testShopServiceSubmitOrder() {
@@ -60,4 +68,17 @@ public class ShopServiceSuiteTest {
         }
     }
 
+    @Test
+    public void testShpFacade() {
+        OrderDto orderDto = new OrderDto();
+        orderDto.addItem(new ItemDto(10L,2));
+        orderDto.addItem(new ItemDto(216L,1));
+        orderDto.addItem(new ItemDto(25L,1));
+        orderDto.addItem(new ItemDto(11L,3));
+        try {
+            orderFacade.processOrder(orderDto,1L);
+        } catch(OrderProcessingException e) {
+            //business exception - should be handled in real application
+        }
+    }
 }
