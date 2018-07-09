@@ -1,45 +1,50 @@
 package com.kodilla.patterns2.observer.homework;
 
-import com.kodilla.patterns2.observer.forum.Observable;
-import com.kodilla.patterns2.observer.forum.Observer;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Homework implements Observable {
-    private List<com.kodilla.patterns2.observer.homework.Observer> observers;
+    private List<Observer> observers;
     private List<String> links;
-    private final String name;
+    private final String username;
 
-    public Homework(String name) {
-        this.name = name;
+    public Homework(String username) {
+        this.username = username;
         links = new ArrayList<>();
         observers = new ArrayList<>();
     }
 
     public void addHomework(String link) {
         links.add(link);
+        notifyObservers();
+    }
+
+    public List<Observer> getObservers() {
+        return observers;
+    }
+
+    public List<String> getLinks() {
+        return links;
+    }
+
+    public String getUsername() {
+        return username;
     }
 
     @Override
     public void registerObserver(Observer observer) {
-        observers.add(observer)
-    }
-
-    @Override
-    public void registerObserver(com.kodilla.patterns2.observer.homework.Observer observer) {
-
+        observers.add(observer);
     }
 
     @Override
     public void notifyObservers() {
-        for(com.kodilla.patterns2.observer.homework.Observer observer: observers) {
+        for(Observer observer: observers) {
             observer.update(this);
         }
     }
 
     @Override
-    public void removeObserver(com.kodilla.patterns2.observer.homework.Homework observer) {
-
+    public void removeObserver(Observer observer) {
+        observers.remove(observer);
     }
 }
