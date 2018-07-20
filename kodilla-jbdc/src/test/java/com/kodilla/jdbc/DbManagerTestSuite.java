@@ -34,6 +34,7 @@ public class DbManagerTestSuite {
             counter++;
         }
         rs.close();
+            statement.close();
         Assert.assertEquals(5,counter);
 
     }
@@ -56,6 +57,8 @@ public class DbManagerTestSuite {
             resultSet.getString("LASTNAME"));
             counter++;
         }
+        resultSet.close();
+            statement.close();
         Assert.assertEquals(2,counter);
 
     }
